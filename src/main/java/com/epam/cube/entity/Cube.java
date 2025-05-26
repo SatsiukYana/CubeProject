@@ -51,13 +51,13 @@ public class Cube implements Observable {
     }
 
     public void setCentrePoint(Point centrePoint) {
-        this.centrePoint = centrePoint; // Сначала меняем состояние
-        notifyObservers(); // Затем уведомляем наблюдателей
+        this.centrePoint = centrePoint;
+        notifyObservers();
     }
 
-    public void setLength(double length) { // Изменил параметр на double
-        this.length = length; // Сначала меняем состояние
-        notifyObservers(); // Затем уведомляем наблюдателей
+    public void setLength(double length) {
+        this.length = length;
+        notifyObservers();
     }
 
     @Override

@@ -21,7 +21,7 @@ public class CubeRatioService {
         double y = centre.getY();
         double z = centre.getZ();
 
-        // Проверим, какие оси пересекаются
+
         boolean xIntersect = Math.abs(x) < halfLength;
         boolean yIntersect = Math.abs(y) < halfLength;
         boolean zIntersect = Math.abs(z) < halfLength;
@@ -30,7 +30,7 @@ public class CubeRatioService {
             return Optional.empty();
         }
 
-        // Выбираем ось с наибольшим отклонением от центра
+
         double maxDistance = -1;
         double selectedCoord = 0;
 

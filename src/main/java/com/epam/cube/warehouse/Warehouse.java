@@ -18,7 +18,6 @@ public class Warehouse {
         return instance;
     }
 
-    // Методы для обновления значений
     public void putArea(long id, double area) {
         shapeAreaValues.put(id, area);
     }
