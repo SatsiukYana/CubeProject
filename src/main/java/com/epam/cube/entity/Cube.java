@@ -30,9 +30,6 @@ public class Cube implements Observable {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -99,10 +96,12 @@ public class Cube implements Observable {
 
     @Override
     public String toString() {
-        return "Cube{" +
-                "name=" + name +
-                "centrePoint" + centrePoint +
-                "length" + length +
-                "}";
+        StringBuilder sb = new StringBuilder("Cube{");
+        sb.append("id=").append(id)
+                .append(", name='").append(name).append('\'')
+                .append(", centrePoint=").append(centrePoint)
+                .append(", length=").append(length)
+                .append('}');
+        return sb.toString();
     }
 }

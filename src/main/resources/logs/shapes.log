@@ -1,18 +1,22 @@
-2025-05-26 17:36:18.113 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeOnPlane
-2025-05-26 17:36:18.119 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotOnPlane
-2025-05-26 17:36:18.133 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeX
-2025-05-26 17:36:18.134 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotX
-2025-05-26 17:36:18.137 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeY
-2025-05-26 17:36:18.138 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotY
-2025-05-26 17:36:18.142 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeZ
-2025-05-26 17:36:18.142 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotZ
-2025-05-26 17:36:18.170 [main] INFO  com.epam.cube.reader.DataParser - Parsing data from path: data/invalid_test_data.txt
-2025-05-26 17:36:18.170 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/invalid_test_data.txt
-2025-05-26 17:36:18.171 [main] WARN  com.epam.cube.reader.DataParser - Invalid line skipped (expected 6 fields): invalid;data;that;won't;parse
-2025-05-26 17:36:18.174 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating ValidCube
-2025-05-26 17:36:18.179 [main] INFO  com.epam.cube.reader.DataParser - Parsing data from path: nonexistent/path.txt
-2025-05-26 17:36:18.180 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: nonexistent/path.txt
-2025-05-26 17:36:18.180 [main] ERROR com.epam.cube.reader.DataReader - Unable to read file at 'nonexistent/path.txt'
+2025-05-31 15:51:27.735 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube2
+2025-05-31 15:51:27.763 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube3
+2025-05-31 15:51:27.768 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube5
+2025-05-31 15:51:27.773 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube4
+2025-05-31 15:51:27.776 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.791 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeOnPlane
+2025-05-31 15:51:27.791 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotOnPlane
+2025-05-31 15:51:27.798 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeX
+2025-05-31 15:51:27.798 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotX
+2025-05-31 15:51:27.802 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeY
+2025-05-31 15:51:27.803 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotY
+2025-05-31 15:51:27.807 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeZ
+2025-05-31 15:51:27.807 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotZ
+2025-05-31 15:51:27.835 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data\invalid_test_data.txt
+2025-05-31 15:51:27.835 [main] INFO  com.epam.cube.parser.DataParser - Parsing 2 lines of cube data
+2025-05-31 15:51:27.835 [main] WARN  com.epam.cube.parser.DataParser - Invalid line skipped (expected 6 fields): invalid;data;that;won't;parse
+2025-05-31 15:51:27.851 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating ValidCube
+2025-05-31 15:51:27.851 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: nonexistent/path.txt
+2025-05-31 15:51:27.851 [main] ERROR com.epam.cube.reader.DataReader - Unable to read file at 'nonexistent/path.txt'
 java.nio.file.NoSuchFileException: nonexistent\path.txt
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
@@ -26,8 +30,11 @@ java.nio.file.NoSuchFileException: nonexistent\path.txt
 	at java.base/java.nio.file.Files.readAllLines(Files.java:3392) ~[?:?]
 	at java.base/java.nio.file.Files.readAllLines(Files.java:3433) ~[?:?]
 	at com.epam.cube.reader.DataReader.readData(DataReader.java:19) ~[classes/:?]
-	at com.epam.cube.reader.DataParser.parse(DataParser.java:28) ~[classes/:?]
-	at cube.reader.DataParserTest.parse_invalidFile_returnsEmptyList(DataParserTest.java:47) ~[test-classes/:?]
+	at cube.reader.DataParserTest.lambda$parse_invalidFile_throwsException$0(DataParserTest.java:52) ~[test-classes/:?]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55) ~[junit-jupiter-api-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37) ~[junit-jupiter-api-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3082) ~[junit-jupiter-api-5.8.1.jar:5.8.1]
+	at cube.reader.DataParserTest.parse_invalidFile_throwsException(DataParserTest.java:51) ~[test-classes/:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725) ~[junit-platform-commons-1.8.1.jar:1.8.1]
@@ -95,53 +102,59 @@ java.nio.file.NoSuchFileException: nonexistent\path.txt
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) [junit-rt.jar:?]
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) [junit-rt.jar:?]
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) [junit-rt.jar:?]
-2025-05-26 17:36:18.197 [main] ERROR com.epam.cube.reader.DataParser - Failed to read data from path 'nonexistent/path.txt': Failed to read from path: nonexistent/path.txt
-2025-05-26 17:36:18.202 [main] INFO  com.epam.cube.reader.DataParser - Parsing data from path: data/test_cube_data.txt
-2025-05-26 17:36:18.202 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/test_cube_data.txt
-2025-05-26 17:36:18.203 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.204 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating SecondCube
-2025-05-26 17:36:18.215 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.216 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.220 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating InitialCube
-2025-05-26 17:36:18.220 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating InitialCube
-2025-05-26 17:36:18.221 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating UpdatedCube
-2025-05-26 17:36:18.221 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating UpdatedCube
-2025-05-26 17:36:18.225 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/cube_data.txt
-2025-05-26 17:36:18.231 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.234 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.237 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.241 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating OffsetCube
-2025-05-26 17:36:18.245 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.248 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.251 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.253 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-26 17:36:18.273 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.273 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-26 17:36:18.274 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-26 17:36:18.276 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.277 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-26 17:36:18.277 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-26 17:36:18.279 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.279 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-26 17:36:18.279 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-26 17:36:18.282 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.283 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-26 17:36:18.284 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-26 17:36:18.287 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.287 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-26 17:36:18.288 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-26 17:36:18.290 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.291 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-26 17:36:18.292 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-26 17:36:18.298 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.299 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
-2025-05-26 17:36:18.300 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
-2025-05-26 17:36:18.305 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.305 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
-2025-05-26 17:36:18.306 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
-2025-05-26 17:36:18.309 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.310 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
-2025-05-26 17:36:18.310 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
-2025-05-26 17:36:18.313 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-26 17:36:18.314 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
-2025-05-26 17:36:18.314 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
+2025-05-31 15:51:27.868 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/test_cube_data.txt
+2025-05-31 15:51:27.879 [main] INFO  com.epam.cube.parser.DataParser - Parsing 2 lines of cube data
+2025-05-31 15:51:27.880 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.880 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating SecondCube
+2025-05-31 15:51:27.888 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.888 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.897 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating InitialCube
+2025-05-31 15:51:27.897 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating InitialCube
+2025-05-31 15:51:27.897 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating UpdatedCube
+2025-05-31 15:51:27.897 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating UpdatedCube
+2025-05-31 15:51:27.904 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/cube_data.txt
+2025-05-31 15:51:27.910 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.913 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.913 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
+2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
+2025-05-31 15:51:27.938 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:27.938 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
+2025-05-31 15:51:27.938 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
+2025-05-31 15:51:27.943 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:27.944 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
+2025-05-31 15:51:27.944 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
+2025-05-31 15:51:27.950 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.950 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating LargeCube
+2025-05-31 15:51:27.959 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating SmallCube
+2025-05-31 15:51:27.961 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating OtherCube
+2025-05-31 15:51:27.961 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.961 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating AlphaCube
+2025-05-31 15:51:27.975 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating BetaCube
+2025-05-31 15:51:27.987 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating OffsetCube
+2025-05-31 15:51:27.990 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.993 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:27.999 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:28.002 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-05-31 15:51:28.052 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:28.056 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
+2025-05-31 15:51:28.057 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
+2025-05-31 15:51:28.066 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:28.067 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
+2025-05-31 15:51:28.068 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
+2025-05-31 15:51:28.084 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:28.085 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
+2025-05-31 15:51:28.085 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
+2025-05-31 15:51:28.089 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
+2025-05-31 15:51:28.090 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
+2025-05-31 15:51:28.091 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie

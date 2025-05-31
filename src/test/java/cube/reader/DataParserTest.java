@@ -1,8 +1,11 @@
 package cube.reader;
 
 import com.epam.cube.entity.Cube;
-import com.epam.cube.reader.DataParser;
+import com.epam.cube.exception.InvalidPathException;
+import com.epam.cube.parser.DataParser;
+import com.epam.cube.reader.DataReader;
 import org.junit.jupiter.api.*;
+
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.List;
@@ -25,12 +28,14 @@ class DataParserTest {
     @AfterAll
     static void tearDown() throws IOException {
         Files.deleteIfExists(Paths.get(TEST_FILE));
+        Files.deleteIfExists(Paths.get("data/invalid_test_data.txt"));
     }
 
     @Test
-    void parse_validFile_returnsCubes() {
+    void parse_validFile_returnsCubes() throws InvalidPathException {
+        List<String> lines = DataReader.readData(TEST_FILE);
         DataParser parser = new DataParser();
-        List<Cube> cubes = parser.parse(TEST_FILE);
+        List<Cube> cubes = parser.parse(lines);
 
         assertNotNull(cubes, "Parsed list should not be null");
         assertEquals(2, cubes.size(), "Should parse 2 cubes");
@@ -42,28 +47,25 @@ class DataParserTest {
     }
 
     @Test
-    void parse_invalidFile_returnsEmptyList() {
-        DataParser parser = new DataParser();
-        List<Cube> cubes = parser.parse("nonexistent/path.txt");
-
-        assertNotNull(cubes, "List should not be null even if file is invalid");
-        assertEquals(0, cubes.size(), "Should return empty list when file can't be read");
+    void parse_invalidFile_throwsException() {
+        assertThrows(InvalidPathException.class, () -> {
+            DataReader.readData("nonexistent/path.txt");
+        });
     }
 
     @Test
-    void parse_invalidLine_skipsLine() throws IOException {
+    void parse_invalidLine_skipsLine() throws IOException, InvalidPathException {
         Path invalidFile = Paths.get("data/invalid_test_data.txt");
         Files.write(invalidFile, List.of(
                 "invalid;data;that;won't;parse",
                 "10.0;20.0;30.0;3;ValidCube;6"
         ));
 
+        List<String> lines = DataReader.readData(invalidFile.toString());
         DataParser parser = new DataParser();
-        List<Cube> cubes = parser.parse("data/invalid_test_data.txt");
+        List<Cube> cubes = parser.parse(lines);
 
         assertEquals(1, cubes.size(), "Only 1 valid line should be parsed");
         assertEquals("ValidCube", cubes.get(0).getName());
-
-        Files.deleteIfExists(invalidFile);
     }
 }

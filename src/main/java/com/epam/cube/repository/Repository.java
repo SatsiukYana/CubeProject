@@ -1,5 +1,6 @@
 package com.epam.cube.repository;
-import com.epam.cube.specification.Specification;
+
+import com.epam.cube.specification.CubeSpecification;
 import com.epam.cube.entity.Cube;
 
 import java.util.ArrayList;
@@ -21,7 +22,11 @@ public class Repository {
     public List<Cube> getCubes() {
         return new ArrayList<>(cubes);
     }
-
+    public List<Cube> query(CubeSpecification specification) {
+        return cubes.stream()
+                .filter(specification::isSatisfiedBy)
+                .collect(Collectors.toList());
+    }
     public List<Cube> sortBy(Comparator<Cube> comparator) {
         return cubes.stream()
                 .sorted(comparator)

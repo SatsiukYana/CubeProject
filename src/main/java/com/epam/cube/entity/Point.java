@@ -65,14 +65,13 @@ public class Point {
         return result;
     }
 
-
     @Override
-    public String toString(){
-        return "Point{"+
-                "x="+x+
-                "y="+y+
-                "z="+z+
-                "}";
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Point{");
+        sb.append("x=").append(x)
+                .append(", y=").append(y)
+                .append(", z=").append(z)
+                .append('}');
+        return sb.toString();
     }
-
 }

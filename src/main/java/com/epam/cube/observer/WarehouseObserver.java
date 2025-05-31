@@ -9,11 +9,12 @@ import org.slf4j.LoggerFactory;
 
 public class WarehouseObserver implements Observe {
     private final Logger log = LoggerFactory.getLogger(WarehouseObserver.class);
-    private final Warehouse warehouse = Warehouse.getInstance();
 
     @Override
     public void update(Cube cube) {
         log.info("Updating " + cube.getName());
+
+        Warehouse warehouse = Warehouse.getInstance(); // ← перемещено сюда
 
         long id = cube.getId();
         double area = CubeCalculationService.calculateArea(cube);
