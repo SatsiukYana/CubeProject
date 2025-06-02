@@ -4,7 +4,6 @@ import com.epam.cube.entity.Cube;
 import com.epam.cube.entity.Point;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.Optional;
 
 public class CubeRatioService {

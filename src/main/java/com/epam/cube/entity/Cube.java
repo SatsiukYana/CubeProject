@@ -2,8 +2,8 @@ package com.epam.cube.entity;
 
 import com.epam.cube.observer.Observable;
 import com.epam.cube.observer.WarehouseObserver;
+import com.epam.cube.service.CubeCalculationService;
 import com.epam.cube.warehouse.Observe;
-import com.epam.cube.warehouse.Warehouse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,14 +22,17 @@ public class Cube implements Observable {
         this.name = name;
         this.centrePoint = centrePoint;
         this.length = length;
-        addObserver(new WarehouseObserver());
+    }
+
+    public Cube(long id, String name, Point centrePoint, double length, CubeCalculationService service) {
+        this(id, name, centrePoint, length);
+        addObserver(new WarehouseObserver(service));
         notifyObservers();
     }
 
     public long getId() {
         return id;
     }
-
 
     public String getName() {
         return name;
@@ -69,29 +72,24 @@ public class Cube implements Observable {
 
     @Override
     public void notifyObservers() {
-        for (Observe observer : observers) {
-            observer.update(this);
-        }
+        observers.forEach(observer -> observer.update(this));
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Cube)) return false;
 
         Cube cube = (Cube) o;
 
-        if (length != cube.length) return false;
-        if (!Objects.equals(name, cube.name)) return false;
-        return Objects.equals(centrePoint, cube.centrePoint);
+        return Double.compare(cube.length, length) == 0
+                && Objects.equals(name, cube.name)
+                && Objects.equals(centrePoint, cube.centrePoint);
     }
 
     @Override
     public int hashCode() {
-        int result = (name != null) ? name.hashCode() : 0;
-        result = 31 * result + (centrePoint != null ? centrePoint.hashCode() : 0);
-        result = 31 * result + (int) length;
-        return result;
+        return Objects.hash(name, centrePoint, length);
     }
 
     @Override

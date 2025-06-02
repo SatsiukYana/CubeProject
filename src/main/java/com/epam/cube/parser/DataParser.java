@@ -17,7 +17,6 @@ public class DataParser {
 
     public List<Cube> parse(List<String> lines) {
         log.info("Parsing {} lines of cube data", lines.size());
-
         List<Cube> cubes = new ArrayList<>();
 
         for (String line : lines) {
@@ -28,24 +27,26 @@ public class DataParser {
             }
 
             try {
-                Factory<Point> pointFactory = PointFactory.create(
-                        Double.parseDouble(arr[0]),
-                        Double.parseDouble(arr[1]),
-                        Double.parseDouble(arr[2])
-                );
-                Point point = pointFactory.create();
+                double x = Double.parseDouble(arr[0]);
+                double y = Double.parseDouble(arr[1]);
+                double z = Double.parseDouble(arr[2]);
+                long id = Long.parseLong(arr[3]);
+                String name = arr[4];
+                double length = Double.parseDouble(arr[5]);
 
-                Factory<Cube> cubeFactory = CubeFactory.create(
-                        Long.parseLong(arr[3]),
-                        arr[4],
-                        point,
-                        Double.parseDouble(arr[5])
-                );
-                Cube cube = cubeFactory.create();
+                if (length <= 0) {
+                    log.warn("Cube length must be > 0. Skipping line: {}", line);
+                    continue;
+                }
 
+                Point point = PointFactory.create(x, y, z).create();
+                Cube cube = CubeFactory.create(id, name, point, length).create();
                 cubes.add(cube);
+
             } catch (NumberFormatException e) {
                 log.warn("Failed to parse line due to number format error: {}", line);
+            } catch (Exception e) {
+                log.error("Unexpected error while parsing line: {}", line, e);
             }
         }
 

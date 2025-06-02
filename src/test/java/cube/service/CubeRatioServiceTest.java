@@ -17,10 +17,6 @@ class CubeRatioServiceTest {
         Optional<Double> ratio = CubeRatioService.getCubeRatio(cube);
         assertTrue(ratio.isPresent(), "Должен возвращаться Optional с результатом");
 
-        // При смещении на 1 и длине 4, половина длины = 2
-        // smallerLength = 2 - 1 = 1, smallerVolume = 1^3 = 1
-        // totalVolume = 4^3 = 64, largerVolume = 64 - 1 = 63
-        // ratio = 1 / 63
         double expectedRatio = 1.0 / 63.0;
         assertEquals(expectedRatio, ratio.get(), 0.001, "Неверное отношение частей для пересечения XY");
     }
@@ -58,10 +54,6 @@ class CubeRatioServiceTest {
         Optional<Double> ratio = CubeRatioService.getCubeRatio(cube);
         assertTrue(ratio.isPresent(), "Cube пересекается по оси Z, должно быть значение");
 
-        // При смещении на 0.5 и длине 2, половина длины = 1
-        // smallerLength = 1 - 0.5 = 0.5, smallerVolume = 0.5^3 = 0.125
-        // totalVolume = 2^3 = 8, largerVolume = 8 - 0.125 = 7.875
-        // ratio = 0.125 / 7.875
         double expectedRatio = 0.125 / 7.875;
         assertEquals(expectedRatio, ratio.get(), 0.001, "Неверное отношение объемов");
     }

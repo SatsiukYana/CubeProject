@@ -2,36 +2,55 @@ package cube.reader;
 
 import com.epam.cube.exception.InvalidPathException;
 import com.epam.cube.reader.DataReader;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+import java.io.IOException;
+import java.nio.file.*;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataReaderTest {
 
-    String[] testData = {
-            "10;20;30;1;Hello;5",
-            "15;25;35;2;World;8",
-            "20;30;40;3;Java;12",
-            "25;35;45;4;Spring;6",
-            "30;40;50;5;Filter;10",
-            "35;45;55;6;Response;7"
-    };
+    private static final String TEST_FILE = "data/test_input.txt";
+
+    @BeforeAll
+    static void setUp() throws IOException {
+        Files.createDirectories(Paths.get("data"));
+        Files.write(Paths.get(TEST_FILE), List.of(
+                "10;20;30;1;Hello;5",
+                "invalid;data",
+                "35;45;55;6;Response;7"
+        ));
+    }
+
+    @AfterAll
+    static void tearDown() throws IOException {
+        Files.deleteIfExists(Paths.get(TEST_FILE));
+    }
 
     @Test
-    void testReadData_Success() {
-        try {
-            List<String> result = DataReader.readData("data/cube_data.txt");
+    void testReadData_ShouldReadLinesFromFile() throws InvalidPathException {
+        List<String> lines = DataReader.readData(TEST_FILE);
 
-            assertEquals(6, result.size(), "Ожидалось 6 строк данных");
+        assertNotNull(lines, "Результат не должен быть null");
+        assertEquals(3, lines.size(), "Ожидалось 3 строки в тестовом файле");
 
-            for (int i = 0; i < testData.length; i++) {
-                assertEquals(testData[i], result.get(i), "Неверная строка на позиции " + i);
-            }
+        assertEquals("10;20;30;1;Hello;5", lines.get(0));
+        assertEquals("invalid;data", lines.get(1));
+        assertEquals("35;45;55;6;Response;7", lines.get(2));
+    }
 
-        } catch (InvalidPathException e) {
-            fail("Исключение не должно было быть выброшено при корректном пути: " + e.getMessage());
-        }
+    @Test
+    void testReadData_ShouldThrowExceptionIfFileNotExists() {
+        String invalidPath = "nonexistent/file.txt";
+
+        InvalidPathException thrown = assertThrows(
+                InvalidPathException.class,
+                () -> DataReader.readData(invalidPath),
+                "Ожидалось исключение InvalidPathException"
+        );
+
+        assertTrue(thrown.getMessage().contains("Failed to read from path"));
     }
 }

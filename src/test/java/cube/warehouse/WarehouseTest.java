@@ -4,6 +4,9 @@ import com.epam.cube.warehouse.Warehouse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Field;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class WarehouseTest {
@@ -15,10 +18,20 @@ class WarehouseTest {
     private final double volume = 1000.0;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws Exception {
         warehouse = Warehouse.getInstance();
-        // Очистим данные перед каждым тестом, чтобы избежать влияния singleton-состояния
-        clearWarehouse(warehouse);
+
+        Field areaField = Warehouse.class.getDeclaredField("shapeAreaValues");
+        Field perimeterField = Warehouse.class.getDeclaredField("shapePerimetrValues");
+        Field volumeField = Warehouse.class.getDeclaredField("shapeVolumeValues");
+
+        areaField.setAccessible(true);
+        perimeterField.setAccessible(true);
+        volumeField.setAccessible(true);
+
+        ((Map<?, ?>) areaField.get(warehouse)).clear();
+        ((Map<?, ?>) perimeterField.get(warehouse)).clear();
+        ((Map<?, ?>) volumeField.get(warehouse)).clear();
     }
 
     @Test
@@ -51,25 +64,4 @@ class WarehouseTest {
         assertNull(warehouse.getPerimeter(999L), "Perimeter for unknown ID should be null");
         assertNull(warehouse.getVolume(999L), "Volume for unknown ID should be null");
     }
-
-    // Метод для очистки полей singleton-а (можно вынести в TestUtils, если понадобится чаще)
-    private void clearWarehouse(Warehouse warehouse) {
-        try {
-            var areaField = Warehouse.class.getDeclaredField("shapeAreaValues");
-            var perimeterField = Warehouse.class.getDeclaredField("shapePerimetrValues");
-            var volumeField = Warehouse.class.getDeclaredField("shapeVolumeValues");
-
-            areaField.setAccessible(true);
-            perimeterField.setAccessible(true);
-            volumeField.setAccessible(true);
-
-            ((java.util.Map<?, ?>) areaField.get(warehouse)).clear();
-            ((java.util.Map<?, ?>) perimeterField.get(warehouse)).clear();
-            ((java.util.Map<?, ?>) volumeField.get(warehouse)).clear();
-
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException("Failed to clear Warehouse state for testing", e);
-        }
-    }
 }
-

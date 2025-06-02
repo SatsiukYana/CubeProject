@@ -1,22 +1,8 @@
-2025-05-31 15:51:27.735 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube2
-2025-05-31 15:51:27.763 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube3
-2025-05-31 15:51:27.768 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube5
-2025-05-31 15:51:27.773 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube4
-2025-05-31 15:51:27.776 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.791 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeOnPlane
-2025-05-31 15:51:27.791 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotOnPlane
-2025-05-31 15:51:27.798 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeX
-2025-05-31 15:51:27.798 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotX
-2025-05-31 15:51:27.802 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeY
-2025-05-31 15:51:27.803 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotY
-2025-05-31 15:51:27.807 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeZ
-2025-05-31 15:51:27.807 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating CubeNotZ
-2025-05-31 15:51:27.835 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data\invalid_test_data.txt
-2025-05-31 15:51:27.835 [main] INFO  com.epam.cube.parser.DataParser - Parsing 2 lines of cube data
-2025-05-31 15:51:27.835 [main] WARN  com.epam.cube.parser.DataParser - Invalid line skipped (expected 6 fields): invalid;data;that;won't;parse
-2025-05-31 15:51:27.851 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating ValidCube
-2025-05-31 15:51:27.851 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: nonexistent/path.txt
-2025-05-31 15:51:27.851 [main] ERROR com.epam.cube.reader.DataReader - Unable to read file at 'nonexistent/path.txt'
+2025-06-02 23:23:26.764 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data\invalid_test_data.txt
+2025-06-02 23:23:26.792 [main] INFO  com.epam.cube.parser.DataParser - Parsing 2 lines of cube data
+2025-06-02 23:23:26.793 [main] WARN  com.epam.cube.parser.DataParser - Invalid line skipped (expected 6 fields): invalid;data;that;won't;parse
+2025-06-02 23:23:26.818 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: nonexistent/path.txt
+2025-06-02 23:23:26.819 [main] ERROR com.epam.cube.reader.DataReader - Unable to read file at 'nonexistent/path.txt'
 java.nio.file.NoSuchFileException: nonexistent\path.txt
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
@@ -102,59 +88,96 @@ java.nio.file.NoSuchFileException: nonexistent\path.txt
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) [junit-rt.jar:?]
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) [junit-rt.jar:?]
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) [junit-rt.jar:?]
-2025-05-31 15:51:27.868 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/test_cube_data.txt
-2025-05-31 15:51:27.879 [main] INFO  com.epam.cube.parser.DataParser - Parsing 2 lines of cube data
-2025-05-31 15:51:27.880 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.880 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating SecondCube
-2025-05-31 15:51:27.888 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.888 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.897 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating InitialCube
-2025-05-31 15:51:27.897 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating InitialCube
-2025-05-31 15:51:27.897 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating UpdatedCube
-2025-05-31 15:51:27.897 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating UpdatedCube
-2025-05-31 15:51:27.904 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/cube_data.txt
-2025-05-31 15:51:27.910 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.913 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.913 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-31 15:51:27.922 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-31 15:51:27.938 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:27.938 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-31 15:51:27.938 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-31 15:51:27.943 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:27.944 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Beta
-2025-05-31 15:51:27.944 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Gamma
-2025-05-31 15:51:27.950 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.950 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating LargeCube
-2025-05-31 15:51:27.959 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating SmallCube
-2025-05-31 15:51:27.961 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating OtherCube
-2025-05-31 15:51:27.961 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.961 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating AlphaCube
-2025-05-31 15:51:27.975 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating BetaCube
-2025-05-31 15:51:27.987 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating OffsetCube
-2025-05-31 15:51:27.990 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.993 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:27.999 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:28.002 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
-2025-05-31 15:51:28.052 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:28.056 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
-2025-05-31 15:51:28.057 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
-2025-05-31 15:51:28.066 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:28.067 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
-2025-05-31 15:51:28.068 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
-2025-05-31 15:51:28.084 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:28.085 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
-2025-05-31 15:51:28.085 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
-2025-05-31 15:51:28.089 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Alpha
-2025-05-31 15:51:28.090 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Bravo
-2025-05-31 15:51:28.091 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating Charlie
+2025-06-02 23:23:26.879 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/test_cube_data.txt
+2025-06-02 23:23:26.882 [main] INFO  com.epam.cube.parser.DataParser - Parsing 2 lines of cube data
+2025-06-02 23:23:26.907 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating TestCube
+2025-06-02 23:23:26.916 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating InitialCube
+2025-06-02 23:23:26.916 [main] INFO  com.epam.cube.observer.WarehouseObserver - Updating UpdatedCube
+2025-06-02 23:23:26.976 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: nonexistent/file.txt
+2025-06-02 23:23:26.978 [main] ERROR com.epam.cube.reader.DataReader - Unable to read file at 'nonexistent/file.txt'
+java.nio.file.NoSuchFileException: nonexistent\file.txt
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234) ~[?:?]
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379) ~[?:?]
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431) ~[?:?]
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420) ~[?:?]
+	at java.base/java.nio.file.Files.newInputStream(Files.java:159) ~[?:?]
+	at java.base/java.nio.file.Files.newBufferedReader(Files.java:2897) ~[?:?]
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3392) ~[?:?]
+	at java.base/java.nio.file.Files.readAllLines(Files.java:3433) ~[?:?]
+	at com.epam.cube.reader.DataReader.readData(DataReader.java:19) ~[classes/:?]
+	at cube.reader.DataReaderTest.lambda$testReadData_ShouldThrowExceptionIfFileNotExists$0(DataReaderTest.java:50) ~[test-classes/:?]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55) ~[junit-jupiter-api-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:41) ~[junit-jupiter-api-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3098) ~[junit-jupiter-api-5.8.1.jar:5.8.1]
+	at cube.reader.DataReaderTest.testReadData_ShouldThrowExceptionIfFileNotExists(DataReaderTest.java:48) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725) ~[junit-platform-commons-1.8.1.jar:1.8.1]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.1.jar:5.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107) ~[junit-platform-launcher-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88) ~[junit-platform-launcher-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54) ~[junit-platform-launcher-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67) [junit-platform-launcher-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52) [junit-platform-launcher-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) [junit-platform-launcher-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86) [junit-platform-launcher-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86) [junit-platform-launcher-1.8.1.jar:1.8.1]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53) [junit-platform-launcher-1.8.1.jar:1.8.1]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) [junit5-rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) [idea_rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) [junit-rt.jar:?]
+2025-06-02 23:23:26.991 [main] INFO  com.epam.cube.reader.DataReader - Reading data from file: data/test_input.txt

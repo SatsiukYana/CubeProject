@@ -25,7 +25,7 @@ public class Repository {
     public List<Cube> query(CubeSpecification specification) {
         return cubes.stream()
                 .filter(specification::isSatisfiedBy)
-                .collect(Collectors.toList());
+                .toList();
     }
     public List<Cube> sortBy(Comparator<Cube> comparator) {
         return cubes.stream()

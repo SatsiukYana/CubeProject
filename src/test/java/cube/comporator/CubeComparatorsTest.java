@@ -46,7 +46,7 @@ class CubeComparatorsTest {
         List<Cube> sorted = new ArrayList<>(cubes);
         sorted.sort(new CubeNameComparator());
 
-        assertEquals(List.of(cube1, cube2, cube3), sorted); // Alpha, Beta, Gamma
+        assertEquals(List.of(cube1, cube2, cube3), sorted);
     }
 
     @Test
@@ -55,7 +55,7 @@ class CubeComparatorsTest {
         List<Cube> sorted = new ArrayList<>(cubes);
         sorted.sort(new CubeXCoordinateComparator());
 
-        assertEquals(List.of(cube3, cube1, cube2), sorted); // 0.0, 1.0, 2.0
+        assertEquals(List.of(cube3, cube1, cube2), sorted);
     }
 
     @Test
@@ -64,7 +64,7 @@ class CubeComparatorsTest {
         List<Cube> sorted = new ArrayList<>(cubes);
         sorted.sort(new CubeYCoordinateComparator());
 
-        assertEquals(List.of(cube2, cube1, cube3), sorted); // 2.0, 5.0, 8.0
+        assertEquals(List.of(cube2, cube1, cube3), sorted);
     }
 
     @Test
@@ -73,7 +73,7 @@ class CubeComparatorsTest {
         List<Cube> sorted = new ArrayList<>(cubes);
         sorted.sort(new CubeZCoordinateComparator());
 
-        assertEquals(List.of(cube3, cube1, cube2), sorted); // 1.0, 3.0, 6.0
+        assertEquals(List.of(cube3, cube1, cube2), sorted);
     }
 }
 
